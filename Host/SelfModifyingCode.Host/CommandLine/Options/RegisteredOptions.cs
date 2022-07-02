@@ -5,6 +5,7 @@ public static class RegisteredOptions
     public static IReadOnlyList<ICommandLineOption> AllOptions = new List<ICommandLineOption>()
     {
         new RunHelpOption(),
+        new ExecutingDirectoryOption(),
         new ProgramLocationOption()
     };
 

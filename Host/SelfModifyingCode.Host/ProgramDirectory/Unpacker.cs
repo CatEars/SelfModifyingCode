@@ -4,21 +4,37 @@ namespace SelfModifyingCode.Host.ProgramDirectory;
 
 public class Unpacker
 {
-    private ProgramSource ProgramSource { get; }
     
-    private ExecutionRoot ExecutionRoot { get; }
+    private string ProgramPath { get; }
+    
+    private IProgramRoot ProgramRoot { get; }
 
-    public Unpacker(ProgramSource source, ExecutionRoot executionRoot)
+    public Unpacker(string programPath, IProgramRoot programRoot)
     {
-        ProgramSource = source;
-        ExecutionRoot = executionRoot;
+        ProgramPath = programPath;
+        ProgramRoot = programRoot;
     }
 
     public void Unpack()
     {
-        ExecutionRoot.EnsureProgramFolderExists(ProgramSource.Id);
-        var programFolder = ExecutionRoot.GetProgramFolder(ProgramSource.Id);
-        ZipFile.ExtractToDirectory(ProgramSource.ProgramPath, programFolder);
+        var programIdentity = SHA256Helper.GetFileSHA256Hex(ProgramPath);
+        var directory = ProgramRoot.GetProgramRootFolder();
+        var hashFile = Path.Combine(directory, programIdentity + ".hash");
+        if (File.Exists(hashFile))
+        {
+            // We assume that if the hashfile of the program has been written,
+            // then the equivalent program already exists
+            return;
+        }
+
+        if (Directory.Exists(directory))
+        {
+            Directory.Delete(directory, recursive: true);
+        }
+        
+        Directory.CreateDirectory(directory);
+        ZipFile.ExtractToDirectory(ProgramPath, directory);
+        File.WriteAllText(hashFile, programIdentity);
     }
     
 }

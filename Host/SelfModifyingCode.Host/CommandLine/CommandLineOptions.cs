@@ -27,4 +27,6 @@ public record CommandLineOptions(
         new ConfigVariant.UsePackagedConfiguration(),
         new ExecutableMode.RunExe()
         );
+
+    public string GetProgramFileName() => Path.GetFileName(ProgramPath);
 }

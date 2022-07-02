@@ -1,6 +1,5 @@
 ﻿using System.IO.Compression;
 using System.Reflection;
-using System.Security.Cryptography;
 using SelfModifyingCode.Interface;
 
 namespace SelfModifyingCode.Host.ProgramDirectory;
@@ -8,29 +7,23 @@ namespace SelfModifyingCode.Host.ProgramDirectory;
 public class ManifestReader
 {
 
-    private string ProgramPath { get; }
+    private string ProgramName { get; }
     
-    public ManifestReader(string programPath)
+    private IProgramRoot ProgramRoot { get; }
+    
+    public ManifestReader(string programName, IProgramRoot programRoot)
     {
-        ProgramPath = programPath;
+        ProgramName = programName;
+        ProgramRoot = programRoot;
     }
 
     public ISelfModifyingCodeManifest ReadProgramManifest()
     {
-        var hash = SHA256Helper.GetFileSHA256Hex(ProgramPath);
-        var tempDirectory = Path.GetTempPath();
-        var tempUnpackDirectory = Path.Combine(tempDirectory, hash);
-        
-        if (!Directory.Exists(tempUnpackDirectory))
-        {
-            Directory.CreateDirectory(tempUnpackDirectory);
-            UnpackManifestInto(tempUnpackDirectory);
-        }
-
-        return InitializeManifestFromTempDirectory(tempUnpackDirectory);
+        var directory = ProgramRoot.GetProgramRootFolder();
+        return InitializeManifestFromUnpackedDirectory(directory);
     }
 
-    private ISelfModifyingCodeManifest InitializeManifestFromTempDirectory(string tempUnpackDirectory)
+    private ISelfModifyingCodeManifest InitializeManifestFromUnpackedDirectory(string tempUnpackDirectory)
     {
         var files = Directory.GetFiles(tempUnpackDirectory);
         var manifestFiles = files
@@ -64,7 +57,7 @@ public class ManifestReader
         {
             var typeNames = manifestTypes.Select(type => type.Name);
             var names = string.Join(", ", typeNames);
-            throw new SmcException($"Found multiple manifests for program {ProgramPath}: {names}");
+            throw new SmcException($"Found multiple manifests for program {ProgramName}: {names}");
         }
     }
 
@@ -73,7 +66,7 @@ public class ManifestReader
         if (manifestTypes.Count == 0)
         {
             var manifestName = nameof(ISelfModifyingCodeManifest);
-            throw new SmcException($"Found no manifests implementing `{manifestName}` in program {ProgramPath}");
+            throw new SmcException($"Found no manifests implementing `{manifestName}` in program {ProgramName}");
         }
     }
 
@@ -91,13 +84,13 @@ public class ManifestReader
     {
         if (manifestFile.Count == 0)
         {
-            throw new SmcException($"Tried to find manifest file for '{ProgramPath}', but none were" +
+            throw new SmcException($"Tried to find manifest file for '{ProgramName}', but none were" +
                                    $" found in temporary unpacked folder '{tempUnpackDirectory}'");
         }
     }
 
-    private void UnpackManifestInto(string tempUnpackDirectory)
+    private void UnpackManifestInto(string unpackDirectory)
     {
-        ZipFile.ExtractToDirectory(ProgramPath, tempUnpackDirectory);
+        ZipFile.ExtractToDirectory(ProgramName, unpackDirectory);
     }
 }

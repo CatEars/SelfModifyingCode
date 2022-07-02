@@ -2,24 +2,22 @@
 
 namespace SelfModifyingCode.Host.ProgramDirectory;
 
-public class ExecutionRoot
+public class ExecutionRoot : IProgramRoot
 {
     private string RootPath { get; }
     
-    public ExecutionRoot(string rootPath)
+    private ProgramId ProgramId { get; }
+    
+    public ExecutionRoot(string rootPath, ProgramId programId)
     {
         RootPath = Path.GetFullPath(rootPath);
+        ProgramId = programId;
     }
 
-    public void EnsureProgramFolderExists(ProgramId programId)
+    public string GetProgramRootFolder()
     {
-        Directory.CreateDirectory(GetProgramFolder(programId));
-    }
-
-    public string GetProgramFolder(ProgramId programId)
-    {
-        var programVersion = programId.Version;
+        var programVersion = ProgramId.Version;
         var version = $"v{programVersion.Major}.{programVersion.Minor}";
-        return Path.Combine(RootPath, programId.FullName, version);
+        return Path.Combine(RootPath, ProgramId.FullName, version);
     }
 }
