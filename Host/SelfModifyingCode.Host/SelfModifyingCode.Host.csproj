@@ -15,6 +15,9 @@
       <None Update="BasicWebApi.Bundle.scm">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
+      <None Update="BasicWebApi.Bundle.smc">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>
