@@ -11,4 +11,10 @@
       <ProjectReference Include="..\..\Shared\SelfModifyingCode.Interface\SelfModifyingCode.Interface.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Update="BasicWebApi.Bundle.scm">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>

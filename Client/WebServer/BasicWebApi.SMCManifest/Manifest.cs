@@ -6,11 +6,11 @@ namespace BasicWebApi.SMCManifest;
 public class Manifest : ISelfModifyingCodeManifest
 {
 
-    public string ProgramId => "xyz.catears.BasicWebServer";
+    private Version Version { get; } = new(1, 1);
+    
+    public ProgramId ProgramId => ProgramId.FromFullNameAndVersion("xyz.catears.BasicWebServer", Version);
     
     public string DisplayName => "Echo Server";
-
-    public Version GetVersion() => new (1, 1);
 
     public IExeFileLocator GetExeLocator() => SingleExeLocator<Manifest>.FromRelativePath("BasicWebApi");
 

@@ -1,4 +1,5 @@
 ﻿using SelfModifyingCode.Host.CommandLine;
+using SelfModifyingCode.Host.Mode;
 
 namespace SelfModifyingCode.Host;
 
@@ -11,10 +12,8 @@ public class Entrypoint
         try
         {
             var options = commandLineParser.ParseArgs();
-            if (options.ExecutableMode is ExecutableMode.PrintHelp)
-            {
-                HelpPrinter.PrintHelp();
-            }
+            var execution = SelectExecution.Get(options);
+            execution.Run();
         }
         catch (MissingArgumentException ex)
         {

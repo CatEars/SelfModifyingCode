@@ -1,3 +1,4 @@
+*.scm
 bin/
 obj/
 /packages/

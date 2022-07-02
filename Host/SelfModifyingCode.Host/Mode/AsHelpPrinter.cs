@@ -1,16 +1,16 @@
 ﻿using SelfModifyingCode.Host.CommandLine.Options;
 
-namespace SelfModifyingCode.Host;
+namespace SelfModifyingCode.Host.Mode;
 
-public static class HelpPrinter
+public class AsHelpPrinter : IExecution
 {
-
-    public static string GetFlagDescription(ICommandLineOption option)
+    
+    private static string GetFlagDescription(ICommandLineOption option)
     {
         return (option.ShortFlag == null ? "" : option.ShortFlag + "|") + option.LongFlag;
     }
     
-    public static void PrintHelp()
+    public void Run()
     {
         Console.WriteLine("SelfModifyingCode.Host - Host program for an SMC self-updating process");
         Console.WriteLine();
@@ -34,5 +34,4 @@ public static class HelpPrinter
         Console.WriteLine("Usage: ./SelfModifyingCode.Host.exe -p ./my-program.smc -e ./tmp");
         Console.WriteLine();
     }
-    
 }

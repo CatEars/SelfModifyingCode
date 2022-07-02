@@ -9,7 +9,7 @@ public class CommandLineParser
 
     public CommandLineParser(string[] args)
     {
-        Args = args.Select(arg => arg.ToLower()).ToList();
+        Args = args.ToList();
     }
 
     public static bool ArgumentIsFlag(string arg)

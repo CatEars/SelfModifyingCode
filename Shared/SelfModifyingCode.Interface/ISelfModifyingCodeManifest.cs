@@ -3,11 +3,9 @@
 public interface ISelfModifyingCodeManifest
 {
     
-    string ProgramId { get; }
+    ProgramId ProgramId { get; }
     
     string DisplayName { get; }
-
-    Version GetVersion();
 
     IExeFileLocator GetExeLocator();
 
