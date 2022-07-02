@@ -1,4 +1,4 @@
-﻿namespace SelfModifyingCode.Host.Application;
+﻿namespace SelfModifyingCode.Host.Application.Update;
 
 public static class SelectUpdateChecker
 {

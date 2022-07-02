@@ -1,19 +1,20 @@
 ﻿using SelfModifyingCode.Host.ProgramDirectory;
 using SelfModifyingCode.Interface;
 
-namespace SelfModifyingCode.Host.Application;
+namespace SelfModifyingCode.Host.Application.Update;
 
 public class FileUpdateChecker : IUpdateChecker
 {
-    public Task<bool> UpdateExists(ISelfModifyingCodeManifest manifest, string currentVersionHash, TimeSpan _)
+    public Task<bool> UpdateExists(ApplicationRunInfo appRunInfo, TimeSpan _)
     {
+        var manifest = appRunInfo.Manifest;
         var location = GetProgramLocation(manifest);
         if (!File.Exists(location))
         {
             return Task.FromResult(false);
         }
         var identity = SHA256Helper.GetFileSHA256Hex(location);
-        return Task.FromResult(identity != currentVersionHash);
+        return Task.FromResult(identity != appRunInfo.Identity);
     }
 
     private static string GetProgramLocation(ISelfModifyingCodeManifest manifest)

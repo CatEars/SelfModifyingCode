@@ -1,11 +1,11 @@
 ﻿using SelfModifyingCode.Interface;
 
-namespace SelfModifyingCode.Host.Application;
+namespace SelfModifyingCode.Host.Application.Update;
 
 public interface IUpdateChecker
 {
 
-    Task<bool> UpdateExists(ISelfModifyingCodeManifest manifest, string currentVersionHash, TimeSpan timeout);
+    Task<bool> UpdateExists(ApplicationRunInfo applicationRunInfo, TimeSpan timeout);
 
     Task DownloadLatestProgram(ISelfModifyingCodeManifest manifest, string destination);
 
