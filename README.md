@@ -19,12 +19,10 @@ Easy self-updating programs with .NET Core
 4. Create a single class `Manifest` that implements `ISelfModifyingCodeManifest`.
    * Tip: Use `SingleExeLocator<Manifest>.FromRelativePath` and point to your exe-folder to easily package your code.  
 5. Copy your exe-folder into the manifest project, right-click > properties and make sure it is always copied on build.
-6. Publish your manifest project
-7. Zip the published manifest project into an archive 
-   * Not the single folder you published to, but each individual files + folder in it.
-8. Rename the file-ending from `.zip` to `.smc`.
-9. Publish your files to the SMC Registry you specified in the manifest.
-10. Run your SMC program with the SMC host application and watch the magic happen when you upload the next version of your app to the registry.
+6. Publish your manifest project.
+7. Pack the application into an SMC program using the Host Application with the `--pack` flag.
+8. Publish your SMC program to the SMC Registry you specified in the manifest.
+9. Run your SMC program with the SMC host application and watch the magic happen when you upload the next version of your app to the registry.
 
 ## How it works
 
