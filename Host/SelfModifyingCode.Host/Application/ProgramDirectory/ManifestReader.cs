@@ -2,7 +2,7 @@
 using System.Reflection;
 using SelfModifyingCode.Interface;
 
-namespace SelfModifyingCode.Host.ProgramDirectory;
+namespace SelfModifyingCode.Host.Application.ProgramDirectory;
 
 public class ManifestReader
 {

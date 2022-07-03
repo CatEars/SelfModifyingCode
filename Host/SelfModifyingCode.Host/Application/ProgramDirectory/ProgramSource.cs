@@ -1,6 +1,6 @@
 ﻿using SelfModifyingCode.Interface;
 
-namespace SelfModifyingCode.Host.ProgramDirectory;
+namespace SelfModifyingCode.Host.Application.ProgramDirectory;
 
 public record ProgramSource(string ProgramPath, ProgramId Id)
 {

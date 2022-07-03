@@ -1,4 +1,4 @@
-﻿namespace SelfModifyingCode.Host.ProgramDirectory;
+﻿namespace SelfModifyingCode.Host.Application.ProgramDirectory;
 
 public interface IProgramRoot
 {

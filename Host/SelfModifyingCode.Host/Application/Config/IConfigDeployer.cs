@@ -1,5 +1,4 @@
-﻿using SelfModifyingCode.Host.ProgramDirectory;
-using SelfModifyingCode.Interface;
+﻿using SelfModifyingCode.Interface;
 
 namespace SelfModifyingCode.Host.Application.Config;
 

@@ -1,4 +1,6 @@
-﻿namespace SelfModifyingCode.Host.ProgramDirectory;
+﻿using SelfModifyingCode.Host.Application.Helpers;
+
+namespace SelfModifyingCode.Host.Application.ProgramDirectory;
 
 public class TemporaryRoot : IProgramRoot
 {
