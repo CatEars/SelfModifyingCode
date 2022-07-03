@@ -17,10 +17,13 @@ public class CopyConfigDeployer : IConfigDeployer
         var exeLocator = manifest.GetExeLocator();
         var exeLocation = exeLocator.GetExeFileLocation();
         var exeDirectory = Path.GetDirectoryName(exeLocation)!;
-        var fileName = Path.GetFileName(AppSettings.AppSettingsPath);
-        var sourcePath = AppSettings.AppSettingsPath;
-        var targetPath = Path.Combine(exeDirectory, fileName);
+        foreach (var appSetting in AppSettings.AppSettingsPaths)
+        {
+            var fileName = Path.GetFileName(appSetting);
+            var sourcePath = appSetting;
+            var targetPath = Path.Combine(exeDirectory, fileName);
         
-        File.Copy(sourcePath, targetPath, overwrite: true);
+            File.Copy(sourcePath, targetPath, overwrite: true);
+        }
     }
 }
