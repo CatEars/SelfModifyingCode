@@ -32,4 +32,4 @@ The SMC Host application will unzip the SMC Program, find an SMC Manifest by loo
 with the name "SMCManifest" in it. It will check the manifest for an executable, and relevant
 information to run the executable. Then it will start the executable, while also periodically
 checking for new versions. The manifest points out the SMC Registry that the SMC Program was 
-published from and the Host Application will search for updates using the SMC Registry.
+published to and the Host Application will search for updates found on the specified SMC Registry.
