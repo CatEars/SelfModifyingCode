@@ -17,7 +17,7 @@ public class EchoController : ControllerBase
     [HttpGet]
     public ActionResult<string> Get()
     {
-        var name = "Guy/Girl";
+        var name = "Guy/Girl/Person";
         _logger.LogInformation("Got echo request for '{Name}'", name);
         var pingString = $"Hello, '{name}'";
         return pingString;

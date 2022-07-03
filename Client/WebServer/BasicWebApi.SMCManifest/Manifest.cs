@@ -6,7 +6,7 @@ namespace BasicWebApi.SMCManifest;
 public class Manifest : ISelfModifyingCodeManifest
 {
 
-    private Version Version { get; } = new(1, 3);
+    private Version Version { get; } = new(1, 4);
     
     public ProgramId ProgramId => ProgramId.FromFullNameAndVersion("xyz.catears.BasicWebServer", Version);
     
