@@ -5,6 +5,7 @@ public class ProgramLocationOption : ICommandLineOption
     public string? ShortFlag => "-p";
     public string LongFlag => "--program";
     public string? Description => "Location of SMC program";
+    public string? SampleUsage => "--program path/to/program.smc";
     public string Name => "Program";
     public bool IsMandatory => true;
     public CommandLineOptions Apply(CommandLineOptions current, string? argumentValue)

@@ -11,8 +11,12 @@ public class RunHelpOption : ICommandLineOption
     
     public bool IsMandatory => false;
     
-    public CommandLineOptions Apply(CommandLineOptions current, string? _)
+    public CommandLineOptions Apply(CommandLineOptions current, string? argumentValue)
     {
+        if (argumentValue != null)
+        {
+            return current with { ExecutableMode = new ExecutableMode.PrintDetailedHelp(argumentValue) };
+        }
         return current with { ExecutableMode = new ExecutableMode.PrintHelp() };
     }
 }

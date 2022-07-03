@@ -6,6 +6,8 @@ public interface ICommandLineOption
     string? ShortFlag => null;
 
     string? Description => null;
+
+    string? SampleUsage => null;
     
     string LongFlag { get; }
     

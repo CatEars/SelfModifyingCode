@@ -36,7 +36,7 @@ public class CommandLineParser
         // Create special case for -h / --help so it always runs, even if other flags/args are non-sensical
         if (HelpFlagIsPresent(commandsThatRan))
         {
-            return CommandLineOptions.RunHelp();
+            return parsedOptions;
         }
 
         ThrowIfNotAllMandatoryOptionsAreRun(commandsThatRan);

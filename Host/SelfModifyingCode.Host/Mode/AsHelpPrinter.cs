@@ -5,7 +5,7 @@ namespace SelfModifyingCode.Host.Mode;
 public class AsHelpPrinter : IExecution
 {
     
-    private static string GetFlagDescription(ICommandLineOption option)
+    public static string GetFlagDescription(ICommandLineOption option)
     {
         return (option.ShortFlag == null ? "" : option.ShortFlag + "|") + option.LongFlag;
     }
@@ -16,7 +16,6 @@ public class AsHelpPrinter : IExecution
         Console.WriteLine();
         Console.WriteLine("Arguments:");
         var maxFlagLength = OptionsRegistry.AllOptions.Max(x => GetFlagDescription(x).Length);
-        var maxNameLength = OptionsRegistry.AllOptions.Max(x => x.Name.Length);
         var options = OptionsRegistry.AllOptions
             .OrderBy(x => x.Name);
         
@@ -24,14 +23,15 @@ public class AsHelpPrinter : IExecution
         {
             var flag = GetFlagDescription(option);
             var name = option.Name;
-            var description = option.Description ?? "";
-            var message = "  " + flag.PadRight(maxFlagLength) + " - " 
-                          + name.PadRight(maxNameLength + 5) + description;
+            var message = "  " + flag.PadRight(maxFlagLength) + " - " + name;
             Console.WriteLine(message);
         }
 
         Console.WriteLine();
         Console.WriteLine("Usage: ./SelfModifyingCode.Host.exe -p ./my-program.smc -e ./tmp");
         Console.WriteLine();
+        Console.WriteLine("To inspect a specific argument, write a pattern matching the name:");
+        Console.WriteLine("   ./SelfModifyingCode.Host.exe --help prog");
+        Console.WriteLine("Will print description of option 'Program'");
     }
 }
