@@ -22,7 +22,14 @@ public class StopAndStartUpdater : IUpdateStrategy
     public async Task<ApplicationRunInfo> OnNewUpdateFound(ApplicationRunInfo applicationRunInfo, IUpdateChecker checker)
     {
         Logger.Info("Downloading update while current app is still running");
-        await checker.DownloadLatestProgram(applicationRunInfo.Manifest, Deployer.ProgramLocation);
+        try
+        {
+            await checker.DownloadLatestProgram(applicationRunInfo.Manifest, Deployer.ProgramLocation);
+        }
+        catch (Exception e)
+        {
+            Logger.Info($"Could not download latest program: {e}");
+        }
         Logger.Info("Update exists, closing and updating");
         applicationRunInfo.Runner.Stop();
         await applicationRunInfo.Runner.ActiveTask;

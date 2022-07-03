@@ -8,7 +8,7 @@ public static class SelectUpdateChecker
         return location.Scheme switch
         {
             "file" => new FileUpdateChecker(),
-            "http" or "https" => new HttpUpdateChecker(),
+            "http" or "https" => new HttpUpdateChecker(location),
             _ => throw new ArgumentException($"Could not create update checker for URI {location}")
         };
     }

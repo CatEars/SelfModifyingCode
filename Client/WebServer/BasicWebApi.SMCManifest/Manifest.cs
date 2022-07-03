@@ -6,7 +6,7 @@ namespace BasicWebApi.SMCManifest;
 public class Manifest : ISelfModifyingCodeManifest
 {
 
-    private Version Version { get; } = new(1, 4);
+    private Version Version { get; } = new(1, 6);
     
     public ProgramId ProgramId => ProgramId.FromFullNameAndVersion("xyz.catears.BasicWebServer", Version);
     
@@ -14,8 +14,6 @@ public class Manifest : ISelfModifyingCodeManifest
 
     public IExeFileLocator GetExeLocator() => SingleExeLocator<Manifest>.FromRelativePath("BasicWebApi");
 
-    //public Uri GloballyKnownDownloadLocation => new("http://localhost:7111/Program/BasicWebApi");
-    
-    public Uri GloballyKnownDownloadLocation => new("file://C:/temp/BasicWebApi.Bundle.smc");
+    public Uri GloballyKnownDownloadLocation => new("http://localhost:5049/");
     
 }

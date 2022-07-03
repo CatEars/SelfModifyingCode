@@ -6,7 +6,7 @@ public class FakeProgramRepository : IProgramRepository
 {
 
     private Directory.Program BaseProgram => new(
-        ProgramId.FromFullNameAndVersion("xyz.catears.BasicWebServer", Version.Parse("1.4")),
+        ProgramId.FromFullNameAndVersion("xyz.catears.BasicWebServer", Version.Parse("1.6")),
         ProgramIdentity.NewSha256Identity("abc"),
         "C:/temp/Bundles/BasicWebApi.Bundle.smc",
         "/api/Download/abc"

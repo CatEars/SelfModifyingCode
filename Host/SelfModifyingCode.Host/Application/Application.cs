@@ -30,10 +30,18 @@ public class Application
         while (!applicationRunInfo.Runner.HasStopped)
         {
             var timeout = TimeSpan.FromSeconds(10);
-            var updateExists = await updateChecker.UpdateExists(applicationRunInfo, timeout);
-            if (updateExists)
+            try
             {
-                applicationRunInfo = await updater.OnNewUpdateFound(applicationRunInfo, updateChecker);
+                var updateExists = await updateChecker.UpdateExists(applicationRunInfo, timeout);
+                if (updateExists)
+                {
+                    applicationRunInfo = await updater.OnNewUpdateFound(applicationRunInfo, updateChecker);
+                }
+            }
+            catch (Exception e)
+            {
+                Logger.Info($"Tried to find update for {applicationRunInfo.Manifest.DisplayName} but " +
+                            $"got exception: {e}");
             }
 
             await AppOrDelay(applicationRunInfo, 5000);

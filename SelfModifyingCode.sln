@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfModifyingCode.Server.Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfModifyingCode.Server", "Server\SelfModifyingCode.Server\SelfModifyingCode.Server.csproj", "{96112FD9-6CA5-4FD0-8517-CA2D4B355781}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfModifyingCode.WebClient", "Server\SelfModifyingCode.WebClient\SelfModifyingCode.WebClient.csproj", "{CB45C860-C11B-4D2A-929B-234E0B8FB4E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +52,10 @@ Global
 		{96112FD9-6CA5-4FD0-8517-CA2D4B355781}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96112FD9-6CA5-4FD0-8517-CA2D4B355781}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96112FD9-6CA5-4FD0-8517-CA2D4B355781}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB45C860-C11B-4D2A-929B-234E0B8FB4E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB45C860-C11B-4D2A-929B-234E0B8FB4E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB45C860-C11B-4D2A-929B-234E0B8FB4E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB45C860-C11B-4D2A-929B-234E0B8FB4E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7A0D53D9-87DF-42CF-B54B-F301BE0684BB} = {78F3E409-849F-4D8E-AD7F-9E72167DE527}
@@ -58,5 +64,6 @@ Global
 		{A10BDAC2-865E-4FC8-820B-C13611311B99} = {78F3E409-849F-4D8E-AD7F-9E72167DE527}
 		{684CFF0F-2F7B-4E0F-81AD-159A37D7AEA0} = {3375B8A5-D929-4E1D-8959-04492E4C32B5}
 		{96112FD9-6CA5-4FD0-8517-CA2D4B355781} = {3375B8A5-D929-4E1D-8959-04492E4C32B5}
+		{CB45C860-C11B-4D2A-929B-234E0B8FB4E4} = {3375B8A5-D929-4E1D-8959-04492E4C32B5}
 	EndGlobalSection
 EndGlobal
