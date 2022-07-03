@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-using SelfModifyingCode.Interface;
 
 namespace SelfModifyingCode.Host.Application;
 

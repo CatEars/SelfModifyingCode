@@ -1,6 +1,4 @@
-﻿using SelfModifyingCode.Interface;
-
-namespace SelfModifyingCode.Host.Application.Config;
+﻿namespace SelfModifyingCode.Host.Application.Config;
 
 public class NullDeployer : IConfigDeployer
 {

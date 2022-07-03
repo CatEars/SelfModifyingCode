@@ -1,6 +1,4 @@
-﻿using SelfModifyingCode.Interface;
-
-namespace SelfModifyingCode.Host.Application;
+﻿namespace SelfModifyingCode.Host.Application;
 
 public record ApplicationRunInfo(
     ISelfModifyingCodeManifest Manifest, 

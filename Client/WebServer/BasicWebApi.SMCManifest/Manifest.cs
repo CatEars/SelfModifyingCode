@@ -1,5 +1,5 @@
-﻿using SelfModifyingCode.Interface;
-using SelfModifyingCode.Interface.Helpers;
+﻿using SelfModifyingCode;
+using SelfModifyingCode.Helpers;
 
 namespace BasicWebApi.SMCManifest;
 

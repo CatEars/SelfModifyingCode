@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\..\Shared\SelfModifyingCode.Interface\SelfModifyingCode.Interface.csproj" />
+      <ProjectReference Include="..\..\..\Shared\SelfModifyingCode\SelfModifyingCode.csproj" />
     </ItemGroup>
     
     <ItemGroup>

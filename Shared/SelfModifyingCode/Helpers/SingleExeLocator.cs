@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace SelfModifyingCode.Interface.Helpers;
+namespace SelfModifyingCode.Helpers;
 
 public class SingleExeLocator<TManifest> : IExeFileLocator
     where TManifest : ISelfModifyingCodeManifest

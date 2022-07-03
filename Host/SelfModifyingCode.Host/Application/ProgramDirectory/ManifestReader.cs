@@ -1,6 +1,5 @@
 ﻿using System.IO.Compression;
 using System.Reflection;
-using SelfModifyingCode.Interface;
 
 namespace SelfModifyingCode.Host.Application.ProgramDirectory;
 

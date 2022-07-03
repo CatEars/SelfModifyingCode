@@ -1,6 +1,4 @@
-﻿using SelfModifyingCode.Interface;
-
-namespace SelfModifyingCode.Host.Application.Update;
+﻿namespace SelfModifyingCode.Host.Application.Update;
 
 public interface IUpdateChecker
 {

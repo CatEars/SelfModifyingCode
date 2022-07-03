@@ -1,4 +1,4 @@
-﻿namespace SelfModifyingCode.Interface;
+﻿namespace SelfModifyingCode;
 
 public record RestartType
 {
