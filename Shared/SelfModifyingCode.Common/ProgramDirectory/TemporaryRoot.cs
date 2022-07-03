@@ -1,4 +1,4 @@
-﻿using SelfModifyingCode.Host.Application.Helpers;
+﻿using SelfModifyingCode.Common;
 
 namespace SelfModifyingCode.Host.Application.ProgramDirectory;
 

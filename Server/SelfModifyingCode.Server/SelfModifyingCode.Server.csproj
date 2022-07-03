@@ -12,6 +12,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\Shared\SelfModifyingCode.Common\SelfModifyingCode.Common.csproj" />
       <ProjectReference Include="..\..\Shared\SelfModifyingCode\SelfModifyingCode.csproj" />
       <ProjectReference Include="..\SelfModifyingCode.Server.DataContract\SelfModifyingCode.Server.DataContract.csproj" />
     </ItemGroup>

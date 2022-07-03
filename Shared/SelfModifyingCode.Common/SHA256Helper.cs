@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 
-namespace SelfModifyingCode.Host.Application.Helpers;
+namespace SelfModifyingCode.Common;
 
 public static class SHA256Helper
 {

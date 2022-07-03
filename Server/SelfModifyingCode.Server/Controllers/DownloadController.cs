@@ -31,7 +31,8 @@ public class DownloadController : ControllerBase
 
         if (path is PathType.LocalFile file)
         {
-            return Ok();
+            var name = Path.GetFileName(file.Path);
+            return File(System.IO.File.OpenRead(file.Path), "application/zip", name);
         }
 
         var typeName = path.GetType().Name;

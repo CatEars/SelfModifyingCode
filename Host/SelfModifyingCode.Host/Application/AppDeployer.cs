@@ -1,5 +1,6 @@
-﻿using SelfModifyingCode.Host.Application.Config;
-using SelfModifyingCode.Host.Application.Helpers;
+﻿using SelfModifyingCode.Common;
+using SelfModifyingCode.Common.ProgramDirectory;
+using SelfModifyingCode.Host.Application.Config;
 using SelfModifyingCode.Host.Application.ProgramDirectory;
 using SelfModifyingCode.Host.CommandLine;
 
