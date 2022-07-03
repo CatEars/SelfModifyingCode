@@ -5,14 +5,12 @@ public static class SelectUpdateChecker
 
     public static IUpdateChecker Get(Uri location)
     {
-        if (location.Scheme == "file")
+        return location.Scheme switch
         {
-            return new FileUpdateChecker();
-        }
-        else
-        {
-            throw new ArgumentException($"Could not create update checker for URI {location}");
-        }
+            "file" => new FileUpdateChecker(),
+            "http" or "https" => new HttpUpdateChecker(),
+            _ => throw new ArgumentException($"Could not create update checker for URI {location}")
+        };
     }
     
 }
