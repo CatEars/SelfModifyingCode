@@ -7,7 +7,8 @@ public static class OptionsRegistry
         new RunHelpOption(),
         new ExecutingDirectoryOption(),
         new ProgramLocationOption(),
-        new AppSettingsConfigOption()
+        new AppSettingsConfigOption(),
+        new PackOption()
     };
 
     public static Dictionary<string, ICommandLineOption> Options { get; } = new();

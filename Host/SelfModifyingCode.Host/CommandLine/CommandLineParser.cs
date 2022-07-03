@@ -33,8 +33,13 @@ public class CommandLineParser
             }
         }
         
-        // Create special case for -h / --help so it always runs, even if other flags/args are non-sensical
+        // TODO: verification of command line options....
         if (HelpFlagIsPresent(commandsThatRan))
+        {
+            return parsedOptions;
+        }
+
+        if (parsedOptions.ExecutableMode is ExecutableMode.PackApplication)
         {
             return parsedOptions;
         }

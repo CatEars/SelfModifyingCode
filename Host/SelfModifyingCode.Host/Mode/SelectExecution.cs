@@ -11,6 +11,7 @@ public static class SelectExecution
             ExecutableMode.PrintHelp => new AsHelpPrinter(),
             ExecutableMode.RunExe => new AsApplication(options),
             ExecutableMode.PrintDetailedHelp detail => new AsDetailedHelp(detail.Pattern),
+            ExecutableMode.PackApplication pack => new AsVerifierAndPacker(pack.PackTarget),
             _ => throw new ArgumentException($"Options of type {options.ExecutableMode.GetType().Name} is not a valid execution mode")
         };
     }

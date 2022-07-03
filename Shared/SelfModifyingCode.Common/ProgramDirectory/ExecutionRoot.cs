@@ -1,6 +1,4 @@
-﻿using SelfModifyingCode.Host.Application.ProgramDirectory;
-
-namespace SelfModifyingCode.Common.ProgramDirectory;
+﻿namespace SelfModifyingCode.Common.ProgramDirectory;
 
 public class ExecutionRoot : IProgramRoot
 {

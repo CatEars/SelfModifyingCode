@@ -1,5 +1,5 @@
 ﻿using SelfModifyingCode.Common;
-using SelfModifyingCode.Host.Application.ProgramDirectory;
+using SelfModifyingCode.Common.ProgramDirectory;
 using SelfModifyingCode.Server.Directory;
 
 namespace SelfModifyingCode.Server.Infrastructure.LocalFiles;
