@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicWebApi.SMCManifest", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfModifyingCode.Server.DataContract", "Server\SelfModifyingCode.Server.DataContract\SelfModifyingCode.Server.DataContract.csproj", "{684CFF0F-2F7B-4E0F-81AD-159A37D7AEA0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfModifyingCode.Server", "Server\SelfModifyingCode.Server\SelfModifyingCode.Server.csproj", "{96112FD9-6CA5-4FD0-8517-CA2D4B355781}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{684CFF0F-2F7B-4E0F-81AD-159A37D7AEA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{684CFF0F-2F7B-4E0F-81AD-159A37D7AEA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{684CFF0F-2F7B-4E0F-81AD-159A37D7AEA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96112FD9-6CA5-4FD0-8517-CA2D4B355781}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96112FD9-6CA5-4FD0-8517-CA2D4B355781}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96112FD9-6CA5-4FD0-8517-CA2D4B355781}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96112FD9-6CA5-4FD0-8517-CA2D4B355781}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7A0D53D9-87DF-42CF-B54B-F301BE0684BB} = {78F3E409-849F-4D8E-AD7F-9E72167DE527}
@@ -51,5 +57,6 @@ Global
 		{2B206827-851B-4F41-9223-04B48D7D24CF} = {BE5CC909-D4B7-452F-A37A-EFD2C41A38B4}
 		{A10BDAC2-865E-4FC8-820B-C13611311B99} = {78F3E409-849F-4D8E-AD7F-9E72167DE527}
 		{684CFF0F-2F7B-4E0F-81AD-159A37D7AEA0} = {3375B8A5-D929-4E1D-8959-04492E4C32B5}
+		{96112FD9-6CA5-4FD0-8517-CA2D4B355781} = {3375B8A5-D929-4E1D-8959-04492E4C32B5}
 	EndGlobalSection
 EndGlobal

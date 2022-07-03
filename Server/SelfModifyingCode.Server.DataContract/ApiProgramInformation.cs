@@ -1,10 +1,10 @@
 ﻿namespace SelfModifyingCode.Server.DataContract;
 
-public record ProgramInformation(
+public record ApiProgramInformation(
     string Name, 
     string Version, 
-    WebIdentity Identity,
+    ApiIdentity Identity,
     string FileName,
-    string DownloadUri);
+    string DownloadPath);
     
     
