@@ -1,17 +1,18 @@
 ﻿namespace SelfModifyingCode.Host.CommandLine.Options;
 
-public static class RegisteredOptions
+public static class OptionsRegistry
 {
     public static IReadOnlyList<ICommandLineOption> AllOptions = new List<ICommandLineOption>()
     {
         new RunHelpOption(),
         new ExecutingDirectoryOption(),
-        new ProgramLocationOption()
+        new ProgramLocationOption(),
+        new AppSettingsConfigOption()
     };
 
     public static Dictionary<string, ICommandLineOption> Options { get; } = new();
 
-    static RegisteredOptions()
+    static OptionsRegistry()
     {
         foreach (var option in AllOptions)
         {

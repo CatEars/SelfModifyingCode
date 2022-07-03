@@ -1,4 +1,5 @@
-﻿using SelfModifyingCode.Host.CommandLine;
+﻿using SelfModifyingCode.Host.Application.Config;
+using SelfModifyingCode.Host.CommandLine;
 using SelfModifyingCode.Host.ProgramDirectory;
 using SelfModifyingCode.Interface;
 
@@ -7,10 +8,17 @@ namespace SelfModifyingCode.Host.Application;
 public class AppDeployer
 {
     private CommandLineOptions Options { get; }
+
+    private IConfigDeployer ConfigDeployer { get; }
     
     public AppDeployer(CommandLineOptions options)
     {
         Options = options;
+        ConfigDeployer = options.ConfigVariant switch
+        {
+            ConfigVariant.CopyLocalAppSettings appSettings => new CopyConfigDeployer(appSettings),
+            _ => new NullDeployer()
+        };
     }
 
     public string ProgramLocation => Options.ProgramPath;
@@ -30,7 +38,9 @@ public class AppDeployer
         var unpacker = new Unpacker(Options.ProgramPath, root);
         unpacker.Unpack();
         var realManifestReader = new ManifestReader(Options.GetProgramFileName(), root);
-        return realManifestReader.ReadProgramManifest();
+        var manifest = realManifestReader.ReadProgramManifest();
+        ConfigDeployer.SaveConfig(manifest);
+        return manifest;
     }
 
     private ISelfModifyingCodeManifest ExtractAndReadTemporaryManifest()

@@ -9,4 +9,6 @@ public record ConfigVariant
 
     public record UsePackagedConfiguration() : ConfigVariant;
 
+    public record CopyLocalAppSettings(string AppSettingsPath) : ConfigVariant;
+
 };

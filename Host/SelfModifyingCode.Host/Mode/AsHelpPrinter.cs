@@ -15,9 +15,9 @@ public class AsHelpPrinter : IExecution
         Console.WriteLine("SelfModifyingCode.Host - Host program for an SMC self-updating process");
         Console.WriteLine();
         Console.WriteLine("Arguments:");
-        var maxFlagLength = RegisteredOptions.AllOptions.Max(x => GetFlagDescription(x).Length);
-        var maxNameLength = RegisteredOptions.AllOptions.Max(x => x.Name.Length);
-        var options = RegisteredOptions.AllOptions
+        var maxFlagLength = OptionsRegistry.AllOptions.Max(x => GetFlagDescription(x).Length);
+        var maxNameLength = OptionsRegistry.AllOptions.Max(x => x.Name.Length);
+        var options = OptionsRegistry.AllOptions
             .OrderBy(x => x.Name);
         
         foreach (var option in options)

@@ -25,9 +25,9 @@ public class CommandLineParser
         {
             var currentArg = Args[idx];
             var nextArg = (idx + 1 < Args.Count) ? (Args[idx + 1]) : null;
-            if (ArgumentIsFlag(currentArg) && RegisteredOptions.IsRegisteredOption(currentArg))
+            if (ArgumentIsFlag(currentArg) && OptionsRegistry.IsRegisteredOption(currentArg))
             {
-                var command = RegisteredOptions.Options[currentArg];
+                var command = OptionsRegistry.Options[currentArg];
                 parsedOptions = command.Apply(parsedOptions, nextArg);
                 commandsThatRan.Add(command.Name);
             }
@@ -50,9 +50,9 @@ public class CommandLineParser
 
     private static void ThrowIfNotAllMandatoryOptionsAreRun(HashSet<string> commandsThatRan)
     {
-        if (!RegisteredOptions.AllMandatoryOptionsAreRun(commandsThatRan))
+        if (!OptionsRegistry.AllMandatoryOptionsAreRun(commandsThatRan))
         {
-            var mandatoryOptions = RegisteredOptions.GetMandatoryArguments();
+            var mandatoryOptions = OptionsRegistry.GetMandatoryArguments();
             var missing = mandatoryOptions
                 .Except(commandsThatRan)
                 .Select(commandName => $"'{commandName}'");
