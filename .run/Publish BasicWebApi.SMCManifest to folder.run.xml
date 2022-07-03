@@ -1,0 +1,6 @@
+﻿<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Publish BasicWebApi Bundle" type="DotNetFolderPublish" factoryName="Publish to folder">
+    <riderPublish configuration="Release" delete_existing_files="true" platform="Any CPU" runtime="Portable" target_folder="$PROJECT_DIR$/Example/WebServer/BasicWebApi.Bundle" target_framework="net6.0" uuid_high="-7660980549124210468" uuid_low="-6816607624870769816" />
+    <method v="2" />
+  </configuration>
+</component>

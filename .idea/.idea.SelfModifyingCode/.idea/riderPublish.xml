@@ -5,6 +5,8 @@
       <list>
         <option value="$PROJECT_DIR$/Client/WebServer/BasicWebApi.SMC/BasicWebApi" />
         <option value="$PROJECT_DIR$/Client/WebServer/BasicWebApi.SMCManifest/BasicWebApi" />
+        <option value="$PROJECT_DIR$/Example/WebServer/BasicWebApi.SMCManifest/BasicWebApi" />
+        <option value="$PROJECT_DIR$/Example/WebServer/BasicWebApi.Bundle" />
       </list>
     </option>
   </component>
