@@ -1,7 +1,8 @@
 ﻿using System.IO.Compression;
 using System.Reflection;
+using SelfModifyingCode.Common.ProgramRoot;
 
-namespace SelfModifyingCode.Common.ProgramDirectory;
+namespace SelfModifyingCode.Common.Manifest;
 
 public class ManifestReader
 {

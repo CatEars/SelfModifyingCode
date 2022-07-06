@@ -1,4 +1,4 @@
-﻿using SelfModifyingCode.Common.ProgramDirectory;
+﻿using SelfModifyingCode.Common.ProgramRoot;
 
 namespace SelfModifyingCode.Host.Verify;
 

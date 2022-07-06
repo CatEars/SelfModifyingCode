@@ -1,4 +1,4 @@
-﻿namespace SelfModifyingCode.Common.ProgramDirectory;
+﻿namespace SelfModifyingCode.Common.ProgramRoot;
 
 public class ExecutionRoot : IProgramRoot
 {

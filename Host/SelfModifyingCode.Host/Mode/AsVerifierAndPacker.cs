@@ -1,5 +1,6 @@
 ﻿using System.IO.Compression;
-using SelfModifyingCode.Common.ProgramDirectory;
+using SelfModifyingCode.Common.Manifest;
+using SelfModifyingCode.Common.ProgramRoot;
 using SelfModifyingCode.Host.Application.Logging;
 using SelfModifyingCode.Host.Verify;
 

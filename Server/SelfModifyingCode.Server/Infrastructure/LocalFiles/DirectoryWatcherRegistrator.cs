@@ -1,5 +1,7 @@
 ﻿using SelfModifyingCode.Common;
-using SelfModifyingCode.Common.ProgramDirectory;
+using SelfModifyingCode.Common.Manifest;
+using SelfModifyingCode.Common.ProgramRoot;
+using SelfModifyingCode.Common.Unpacking;
 using SelfModifyingCode.Server.Directory;
 
 namespace SelfModifyingCode.Server.Infrastructure.LocalFiles;

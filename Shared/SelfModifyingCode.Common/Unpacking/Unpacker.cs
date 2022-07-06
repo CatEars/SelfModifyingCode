@@ -1,6 +1,7 @@
 ﻿using System.IO.Compression;
+using SelfModifyingCode.Common.ProgramRoot;
 
-namespace SelfModifyingCode.Common.ProgramDirectory;
+namespace SelfModifyingCode.Common.Unpacking;
 
 public class Unpacker
 {
