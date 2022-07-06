@@ -11,9 +11,9 @@ public class ManifestReader
     
     private IProgramRoot ProgramRoot { get; }
     
-    public ManifestReader(string programName, IProgramRoot programRoot)
+    public ManifestReader(IProgramRoot programRoot)
     {
-        ProgramName = programName;
+        ProgramName = programRoot.GetProgramName();
         ProgramRoot = programRoot;
     }
 

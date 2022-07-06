@@ -18,4 +18,9 @@ public class ExecutionRoot : IProgramRoot
         var version = $"v{programVersion.Major}.{programVersion.Minor}";
         return Path.Combine(RootPath, ProgramId.FullName, version);
     }
+
+    public string GetProgramName()
+    {
+        return ProgramId.FullName;
+    }
 }

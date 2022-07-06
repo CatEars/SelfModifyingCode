@@ -7,7 +7,7 @@ public class HasManifest : IVerifier
 {
     public VerificationIssue Verify(IProgramRoot programRoot)
     {
-        var manifestReader = new ManifestReader("<none>", programRoot);
+        var manifestReader = new ManifestReader(programRoot);
         try
         {
             manifestReader.ReadProgramManifest();

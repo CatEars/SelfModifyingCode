@@ -5,4 +5,6 @@ public interface IProgramRoot
 
     string GetProgramRootFolder();
 
+    string GetProgramName();
+
 }

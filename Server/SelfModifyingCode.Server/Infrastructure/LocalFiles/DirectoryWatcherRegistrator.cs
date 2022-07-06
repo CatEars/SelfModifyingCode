@@ -46,7 +46,7 @@ public class DirectoryWatcherRegistrator : BackgroundService
                 var temporaryRoot = new TemporaryRoot(unregisteredFile.FileName);
                 var unpacker = new Unpacker(unregisteredFile.FileName, temporaryRoot);
                 unpacker.Unpack();
-                var manifestReader = new ManifestReader(unregisteredFile.FileName, temporaryRoot);
+                var manifestReader = new ManifestReader(temporaryRoot);
                 var manifest = manifestReader.ReadProgramManifest();
                 var program = new Directory.Program(
                     manifest.ProgramId,

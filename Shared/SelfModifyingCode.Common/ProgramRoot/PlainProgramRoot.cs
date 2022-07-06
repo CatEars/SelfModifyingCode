@@ -13,4 +13,9 @@ public class PlainProgramRoot : IProgramRoot
     {
         return ProgramRoot;
     }
+
+    public string GetProgramName()
+    {
+        return Path.GetDirectoryName(ProgramRoot) ?? "<unknown>";
+    }
 }

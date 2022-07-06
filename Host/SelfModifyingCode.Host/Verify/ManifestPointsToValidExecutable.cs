@@ -7,7 +7,7 @@ public class ManifestPointsToValidExecutable : IVerifier
 {
     public VerificationIssue Verify(IProgramRoot programRoot)
     {
-        var manifestReader = new ManifestReader("<none>", programRoot);
+        var manifestReader = new ManifestReader(programRoot);
         try
         {
             var manifest = manifestReader.ReadProgramManifest();

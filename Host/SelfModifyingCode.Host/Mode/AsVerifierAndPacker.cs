@@ -35,7 +35,7 @@ public class AsVerifierAndPacker : IExecution
             Environment.Exit(1);
         }
 
-        var manifestReader = new ManifestReader("<none>", target);
+        var manifestReader = new ManifestReader(target);
         var manifest = manifestReader.ReadProgramManifest();
         var resolvedDirectory = Path.GetDirectoryName(PackTarget)!;
         var packDirectory = Directory.GetParent(resolvedDirectory)!.FullName;
