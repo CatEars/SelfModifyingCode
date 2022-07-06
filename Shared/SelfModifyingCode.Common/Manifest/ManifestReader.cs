@@ -88,9 +88,5 @@ public class ManifestReader
                                    $" found in temporary unpacked folder '{tempUnpackDirectory}'");
         }
     }
-
-    private void UnpackManifestInto(string unpackDirectory)
-    {
-        ZipFile.ExtractToDirectory(ProgramName, unpackDirectory);
-    }
+    
 }
